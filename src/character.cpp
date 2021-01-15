@@ -492,15 +492,16 @@ void Character::randomize_blood()
 {
     // Blood type distribution data is from
     // https://stanfordbloodcenter.org/donate-blood/blood-donation-facts/blood-types/
-    static const std::array<std::tuple<double, blood_type, bool>, 8> blood_type_distribution = {
-        std::make_tuple( 0.374, blood_type::blood_O, true ),
-        std::make_tuple( 0.066, blood_type::blood_O, false ),
-        std::make_tuple( 0.357, blood_type::blood_A, true ),
-        std::make_tuple( 0.063, blood_type::blood_A, false ),
-        std::make_tuple( 0.085, blood_type::blood_B, true ),
-        std::make_tuple( 0.015, blood_type::blood_B, false ),
-        std::make_tuple( 0.034, blood_type::blood_AB, true ),
-        std::make_tuple( 0.006, blood_type::blood_AB, false )
+    static const std::array<std::tuple<double, blood_type, bool>, 8> blood_type_distribution = {{
+            std::make_tuple( 0.374, blood_type::blood_O, true ),
+            std::make_tuple( 0.066, blood_type::blood_O, false ),
+            std::make_tuple( 0.357, blood_type::blood_A, true ),
+            std::make_tuple( 0.063, blood_type::blood_A, false ),
+            std::make_tuple( 0.085, blood_type::blood_B, true ),
+            std::make_tuple( 0.015, blood_type::blood_B, false ),
+            std::make_tuple( 0.034, blood_type::blood_AB, true ),
+            std::make_tuple( 0.006, blood_type::blood_AB, false )
+        }
     };
     const double x = rng_float( 0.0, 1.0 );
     double cumulative_prob = 0.0;
