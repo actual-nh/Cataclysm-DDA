@@ -490,8 +490,30 @@ character_id Character::getID() const
 
 void Character::randomize_blood()
 {
-    my_blood_type = static_cast<blood_type>( rng( 0, static_cast<int>( blood_type::num_bt ) - 1 ) );
-    blood_rh_factor = one_in( 2 );
+    // Blood type distribution data is from
+    // https://stanfordbloodcenter.org/donate-blood/blood-donation-facts/blood-types/
+    static const std::array<std::tuple<double, blood_type, bool>, 8> blood_type_distribution = {
+        std::make_tuple( 0.374, blood_type::blood_O, true ),
+        std::make_tuple( 0.066, blood_type::blood_O, false ),
+        std::make_tuple( 0.357, blood_type::blood_A, true ),
+        std::make_tuple( 0.063, blood_type::blood_A, false ),
+        std::make_tuple( 0.085, blood_type::blood_B, true ),
+        std::make_tuple( 0.015, blood_type::blood_B, false ),
+        std::make_tuple( 0.034, blood_type::blood_AB, true ),
+        std::make_tuple( 0.006, blood_type::blood_AB, false )
+    };
+    const double x = rng_float( 0.0, 1.0 );
+    double cumulative_prob = 0.0;
+    for( const std::tuple<double, blood_type, bool> &type : blood_type_distribution ) {
+        cumulative_prob += std::get<0>( type );
+        if( x <= cumulative_prob ) {
+            my_blood_type = std::get<1>( type );
+            blood_rh_factor = std::get<2>( type );
+            return;
+        }
+    }
+    my_blood_type = blood_type::blood_AB;
+    blood_rh_factor = false;
 }
 
 field_type_id Character::bloodType() const
