@@ -1,61 +1,102 @@
 [
   {
     "type": "MONSTER_FACTION",
+    "name": "candy",
+    "neutral": [ "bot", "plant", "nether", "human", "zombie", "baked" ],
+    "by_mood": [ "candy", "player" ]
+  },
+  {
+    "type": "MONSTER_FACTION",
     "name": "marshmallow_boys",
-    "neutral": [ "bot", "plant", "nether", "human", "crackers", "cookies" ],
-    "by_mood": [ "insect", "player", "animal", "gummy_bears" ]
+    "base_faction": "candy"
   },
   {
     "type": "MONSTER_FACTION",
     "name": "gummy_bears",
-    "neutral": [ "bot", "plant", "nether", "human", "crackers", "cookies" ],
-    "by_mood": [ "insect", "player", "animal", "marshmallow_boys" ]
+    "base_faction": "candy"
+  },
+  {
+    "type": "MONSTER_FACTION",
+    "name": "baked",
+    "base_faction": "candy",
+    "neutral": "candy",
+    "by_mood": "baked"
   },
   {
     "type": "MONSTER_FACTION",
     "name": "crackers",
-    "neutral": [ "bot", "plant", "nether", "human", "gummy_bears", "marshmallow_boys" ],
-    "by_mood": [ "insect", "player", "animal", "cookies" ]
+    "base_faction": "baked",
+    "by_mood": "baked"
   },
   {
     "type": "MONSTER_FACTION",
     "name": "cookies",
-    "neutral": [ "bot", "plant", "nether", "human", "gummy_bears", "marshmallow_boys" ],
-    "by_mood": [ "insect", "player", "animal", "crackers" ]
+    "base_faction": "baked",
+    "by_mood": "baked"
   },
   {
     "type": "MONSTER_FACTION",
     "name": "chewgum",
-    "neutral": [ "bot", "plant", "nether", "human", "crackers", "cookies" ],
-    "by_mood": [ "insect", "player", "animal", "gummy_bears", "marshmallow_boys", "caff_chewgum" ]
+    "base_faction": "candy",
+    "by_mood": "caff_chewgum"
   },
   {
     "type": "MONSTER_FACTION",
     "name": "caff_chewgum",
-    "neutral": [ "bot", "plant", "nether", "human", "crackers", "cookies" ],
-    "by_mood": [ "insect", "player", "animal", "gummy_bears", "marshmallow_boys", "chewgum" ]
-  },
-  {
-    "type": "MONSTER_FACTION",
-    "name": "zombie",
-    "friendly": [
-      "slime",
-      "cult",
-      "zombie_aquatic",
-      "crackers",
-      "cookies",
-      "gummy_bears",
-      "marshmallow_boys",
-      "caff_chewgum",
-      "chewgum"
-    ],
-    "neutral": [ "small_animal", "insect", "fish" ],
-    "by_mood": "bee"
+    "base_faction": "chewgum",
+    "by_mood": "chewgum"
   },
   {
     "type": "MONSTER_FACTION",
     "name": "licorice_snakes",
-    "neutral": [ "bot", "plant", "nether", "human", "crackers", "cookies" ],
-    "by_mood": [ "insect", "player", "animal", "gummy_bears", "chewgum" ]
+    "base_faction": "candy"
+  },
+  {
+    "type": "MONSTER_FACTION",
+    "name": "zombie",
+    "copy-from": "zombie",
+    "friendly": "candy"
+  },
+  {
+    "type": "MONSTER_FACTION",
+    "name": "nether",
+    "copy-from": "nether",
+    "neutral": "candy"
+  },
+  {
+    "type": "MONSTER_FACTION",
+    "name": "slime",
+    "copy-from": "slime",
+    "neutral": "candy"
+  },
+  {
+    "type": "MONSTER_FACTION",
+    "name": "bot",
+    "copy-from": "bot",
+    "neutral": "candy"
+  },
+  {
+    "type": "MONSTER_FACTION",
+    "name": "mi-go",
+    "copy-from": "mi-go",
+    "neutral": "candy"
+  },
+  {
+    "type": "MONSTER_FACTION",
+    "name": "plant",
+    "copy-from": "plant",
+    "neutral": "candy"
+  },
+  {
+    "type": "MONSTER_FACTION",
+    "name": "human",
+    "copy-from": "human",
+    "neutral": "candy"
+  },
+  {
+    "type": "MONSTER_FACTION",
+    "name": "player",
+    "copy-from": "player",
+    "by_mood": "candy"
   }
 ]
