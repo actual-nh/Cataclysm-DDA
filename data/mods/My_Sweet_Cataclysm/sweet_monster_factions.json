@@ -1,9 +1,16 @@
 [
   {
     "type": "MONSTER_FACTION",
+    "name": "sweets",
+    "neutral": [ "bot", "plant", "nether", "human", "zombie", "sweets", "fish" ],
+    "by_mood": "player"
+  },
+  {
+    "type": "MONSTER_FACTION",
     "name": "candy",
-    "neutral": [ "bot", "plant", "nether", "human", "zombie", "baked" ],
-    "by_mood": [ "candy", "player" ]
+    "base_faction": "sweets",
+    "neutral": "sweets",
+    "by_mood": "candy"
   },
   {
     "type": "MONSTER_FACTION",
@@ -18,21 +25,19 @@
   {
     "type": "MONSTER_FACTION",
     "name": "baked",
-    "base_faction": "candy",
-    "neutral": "candy",
+    "base_faction": "sweets",
+    "neutral": "sweets",
     "by_mood": "baked"
   },
   {
     "type": "MONSTER_FACTION",
     "name": "crackers",
-    "base_faction": "baked",
-    "by_mood": "baked"
+    "base_faction": "baked"
   },
   {
     "type": "MONSTER_FACTION",
     "name": "cookies",
-    "base_faction": "baked",
-    "by_mood": "baked"
+    "base_faction": "baked"
   },
   {
     "type": "MONSTER_FACTION",
@@ -55,48 +60,68 @@
     "type": "MONSTER_FACTION",
     "name": "zombie",
     "copy-from": "zombie",
-    "friendly": "candy"
+    "friendly": "sweets"
   },
   {
     "type": "MONSTER_FACTION",
     "name": "nether",
     "copy-from": "nether",
-    "neutral": "candy"
+    "neutral": "sweets"
   },
   {
     "type": "MONSTER_FACTION",
     "name": "slime",
     "copy-from": "slime",
-    "neutral": "candy"
+    "neutral": "sweets"
   },
   {
     "type": "MONSTER_FACTION",
     "name": "bot",
     "copy-from": "bot",
-    "neutral": "candy"
+    "neutral": "sweets"
   },
   {
     "type": "MONSTER_FACTION",
     "name": "mi-go",
     "copy-from": "mi-go",
-    "neutral": "candy"
+    "neutral": "sweets"
   },
   {
     "type": "MONSTER_FACTION",
     "name": "plant",
     "copy-from": "plant",
-    "neutral": "candy"
+    "neutral": "sweets"
   },
   {
     "type": "MONSTER_FACTION",
     "name": "human",
     "copy-from": "human",
-    "neutral": "candy"
+    "neutral": "sweets"
   },
   {
     "type": "MONSTER_FACTION",
     "name": "player",
     "copy-from": "player",
-    "by_mood": "candy"
+    "by_mood": "sweets"
+  },
+  {
+    "type": "MONSTER_FACTION",
+    "name": "fish",
+    "copy-from": "fish",
+    "neutral": "sweets"
+  },
+  {
+    "type": "MONSTER_FACTION",
+    "name": "bear",
+    "copy-from": "bear",
+    "hate": "candy",
+    "by_mood": "gummy_bears"
+  },
+  {
+    "type": "MONSTER_FACTION",
+    "name": "bee",
+    "copy-from": "bee",
+    "hate": "sweets",
+    "by_mood": "crackers"
   }
 ]
