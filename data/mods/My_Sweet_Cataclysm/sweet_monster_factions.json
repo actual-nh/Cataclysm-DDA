@@ -2,7 +2,7 @@
   {
     "type": "MONSTER_FACTION",
     "name": "sweets",
-    "neutral": [ "bot", "plant", "nether", "human", "zombie", "sweets", "fish" ],
+    "neutral": [ "bot", "plant", "nether", "human", "zombie", "sweets", "fish", "cat", "big_cat" ],
     "by_mood": "player"
   },
   {
@@ -60,7 +60,7 @@
     "type": "MONSTER_FACTION",
     "name": "zombie",
     "copy-from": "zombie",
-    "friendly": "sweets"
+    "neutral": "sweets"
   },
   {
     "type": "MONSTER_FACTION",
@@ -100,6 +100,18 @@
   },
   {
     "type": "MONSTER_FACTION",
+    "name": "cat",
+    "copy-from": "cat",
+    "neutral": "sweets"
+  },
+  {
+    "type": "MONSTER_FACTION",
+    "name": "big_cat",
+    "copy-from": "big_cat",
+    "neutral": "sweets"
+  },
+  {
+    "type": "MONSTER_FACTION",
     "name": "player",
     "copy-from": "player",
     "by_mood": "sweets"
@@ -119,9 +131,23 @@
   },
   {
     "type": "MONSTER_FACTION",
+    "name": "vermin",
+    "copy-from": "vermin",
+    "hate": "sweets",
+    "by_mood": "chewgum"
+  },
+  {
+    "type": "MONSTER_FACTION",
+    "name": "roach",
+    "copy-from": "roach",
+    "hate": "sweets",
+    "by_mood": "chewgum"
+  },
+  {
+    "type": "MONSTER_FACTION",
     "name": "bee",
     "copy-from": "bee",
     "hate": "sweets",
-    "by_mood": "crackers"
+    "by_mood": [ "cookies", "chewgum" ]
   }
 ]
